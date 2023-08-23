@@ -21,7 +21,8 @@ const settings = {
 
 const animationKeyframes = keyframes`
   0% { transform: scale(1) rotate(0); border-radius: 20%; }
-  100% { transform: scale(1.3) rotate(0); border-radius: 20%; }`
+  100% { transform: scale(1.3) rotate(0); border-radius: 20%}
+  `
 
 const animation = `${animationKeyframes} 3s ease-in-out infinite`;
 
