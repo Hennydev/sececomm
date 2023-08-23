@@ -8,48 +8,48 @@ import { useSelector } from 'react-redux'
 import Payment from "./Payment"
 
 const Nav = () => {
- const [cartQty, setCartQty] = useState<number>(0)
- const [totalPrice, setTotalPrice] = useState(0)
- const cart = useSelector(state=>(state.Cart))
- const user = useSelector(state=>(state.login.user))
- console.log(cart , "cart")
+    const [cartQty, setCartQty] = useState<number>(0)
+    const [totalPrice, setTotalPrice] = useState(0)
+    const cart = useSelector(state => (state.Cart))
+    const user = useSelector(state => (state.login.user))
+    console.log(cart, "cart")
     useEffect(() => {
         const getTotal = () => {
-          let total = 0
-          
-         cart.cart.forEach((item:any) => {
-            total += item.quantity
-            
-          });
-          setCartQty(total)
-          
-        }
-        getTotal()
-      }, [cart])
-      useEffect(() => {
-        const getTotal = () => {
-          
-          let totalPrice = 0
-          cart.cart.forEach(item => {
-          
-            totalPrice += item.Price * item.quantity
-          });
-          
-          setTotalPrice(totalPrice)
-        }
-        getTotal()
-      }, [cart])
-    
-     const handleSubmit =()=>{
-    
-        setTimeout(() => {
-      
-           setCartQty(0)
-            
-           }, 1000)
-        }
+            let total = 0
 
-     }
+            cart.cart.forEach((item: any) => {
+                total += item.quantity
+
+            });
+            setCartQty(total)
+
+        }
+        getTotal()
+    }, [cart])
+    useEffect(() => {
+        const getTotal = () => {
+
+            let totalPrice = 0
+            cart.cart.forEach(item => {
+
+                totalPrice += item.Price * item.quantity
+            });
+
+            setTotalPrice(totalPrice)
+        }
+        getTotal()
+    }, [cart])
+
+    const handleSubmit = () => {
+
+        setTimeout(() => {
+
+            setCartQty(0)
+
+        }, 1000)
+    }
+
+
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [menu, setmenu] = useState<boolean>(false)
@@ -75,28 +75,28 @@ const Nav = () => {
                     <ModalCloseButton />
                     <ModalBody>
                         <Text fontWeight={"bold"} fontSize={"2xl"} >Welcome {user.email}</Text>
-                       <Stack  display={"flex"} flexDir={"column"} alignItems={"flex-start"} >
-                           { cart.cart.length > 0 ? cart.cart.map((item)=>( <VStack key={item.id}>
-                            <HStack> {item.title}
-                            <Image h="36" w="40" src={item.url} alt='cart'></Image>
-                            
-                            <Text>Price: ${item.Price} * </Text>
-                            <Text> {item.quantity}</Text>
-                            
-                            
-                            </HStack>
-                            
-                            
-                            
-                           
-                           </VStack>)) : <Text>No item in cart</Text>}
-                           <Text fontWeight={"bold"} fontSize={"2xl"} textAlign={"center"} mt={"3"}>SubTotal: {totalPrice}</Text>
-                           <Text fontSize={"sm"}>Thanks for your patronage</Text>
-                           </Stack>
-                           
+                        <Stack display={"flex"} flexDir={"column"} alignItems={"flex-start"} >
+                            {cart.cart.length > 0 ? cart.cart.map((item) => (<VStack key={item.id}>
+                                <HStack> {item.title}
+                                    <Image h="36" w="40" src={item.url} alt='cart'></Image>
+
+                                    <Text>Price: ${item.Price} * </Text>
+                                    <Text> {item.quantity}</Text>
+
+
+                                </HStack>
+
+
+
+
+                            </VStack>)) : <Text>No item in cart</Text>}
+                            <Text fontWeight={"bold"} fontSize={"2xl"} textAlign={"center"} mt={"3"}>SubTotal: {totalPrice}</Text>
+                            <Text fontSize={"sm"}>Thanks for your patronage</Text>
+                        </Stack>
+
                     </ModalBody>
                     <ModalFooter>
-                        <Button onClick={handleSubmit} ><Payment totalPrice={totalPrice}/></Button>
+                        <Button onClick={handleSubmit} ><Payment totalPrice={totalPrice} /></Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>

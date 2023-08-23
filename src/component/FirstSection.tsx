@@ -207,7 +207,7 @@ const FirstSection = () => {
         >
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Henny's Showroom</ModalHeader>
+            <ModalHeader>{"Henny's Showroom"}</ModalHeader>
             <ModalCloseButton />
             <SingleProduct item={cItem} setItemModal={setItemModal}></SingleProduct></ModalContent>
         </Modal>
@@ -334,7 +334,7 @@ const FirstSection = () => {
         >
           <ModalOverlay />
           <ModalContent  >
-            <ModalHeader>Henny's Blog</ModalHeader>
+            <ModalHeader>{"Henny's Blog"}</ModalHeader>
             <ModalCloseButton />
             <SingleBlog item={cBlog} ></SingleBlog></ModalContent>
         </Modal>
