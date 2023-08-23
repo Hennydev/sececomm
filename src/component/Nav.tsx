@@ -78,7 +78,7 @@ const Nav = () => {
                        <Stack  display={"flex"} flexDir={"column"} alignItems={"flex-start"} >
                            { cart.cart.length > 0 ? cart.cart.map((item)=>( <VStack key={item.id}>
                             <HStack> {item.title}
-                            <Image h="36" w="40" src={item.url}></Image>
+                            <Image h="36" w="40" src={item.url} alt='cart'></Image>
                             
                             <Text>Price: ${item.Price} * </Text>
                             <Text> {item.quantity}</Text>

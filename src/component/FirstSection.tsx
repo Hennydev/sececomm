@@ -143,7 +143,7 @@ const FirstSection = () => {
     <Box bg={"whitesmoke"} paddingY={"16"} w={["", "90%", "75%"]} m={"auto"}  >
       <Stack direction={['column', "column", 'row']} spacing='24px'>
         <Box w={["full", "full", "60%"]} marginRight={"10"} bg={"white"} paddingX={["0", "0", "3"]} position={"relative"} _hover={{ boxShadow: "dark-lg" }} >
-          <Image src={"./Asset/img1.webp"}></Image>
+          <Image src={"./Asset/img1.webp"} alt="product"></Image>
           <Box width={"full"} pos={"absolute"} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} top={"0"} padding={"8"} >
             <Box color={"white"} bg={"gold"} paddingX={"3"} fontSize={"sm"} rounded={"md"}> New</Box>
             <Text>${Price}</Text>
@@ -160,7 +160,7 @@ const FirstSection = () => {
 
           </Box>
         </Box>
-        <Box w={"full"} bg={"white"} position={"relative"} _hover={{ boxShadow: "dark-lg" }}> <Image src={"./Asset/img2.webp"}></Image>
+        <Box w={"full"} bg={"white"} position={"relative"} _hover={{ boxShadow: "dark-lg" }}> <Image src={"./Asset/img2.webp"} alt="product"></Image>
           <Box pos={"absolute"} right={["4", "20", "32"]} top={["12", "20", "32"]}>  <Text width={["36", "50", "40"]} color={"#808080"} fontSize={["12pt", "14pt", "20pt"]} fontWeight={"bold"}>
             DESIGN BY HENNY MODERN
           </Text>
@@ -178,7 +178,7 @@ const FirstSection = () => {
           {goods.map((good) => (
             <Card key={good.id} bg={"white"} marginX={"3"} width={["180px", "285px"]} height={"full"} overflowY={"hidden"} paddingX={"4"} paddingY={"4"} _hover={{ boxShadow: "2xl" }}>
               <Box position={"relative"}>
-                <Image src={good.url}></Image>
+                <Image src={good.url} alt="product"></Image>
 
                 <Box width={"full"} pos={"absolute"} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} top={"0"} padding={"4"} >
                   <Box color={"white"} bg={"gold"} paddingX={"3"} fontSize={"sm"} rounded={"md"}> New</Box>
@@ -214,7 +214,7 @@ const FirstSection = () => {
       </Box>
       <Box bg={""} display={"flex"} flexDirection={["column", "column", "row"]} alignItems={"center"} justifyContent={"center"}>
 
-        <Box display={"flex"} w={["full", "full", "65%"]} mb={["8", "8", "0"]} marginRight={["0", "0", "8"]} bg={"white"} paddingY={["10", "16"]} > <Image src={"./Asset/secFlex1.webp"}></Image>
+        <Box display={"flex"} w={["full", "full", "65%"]} mb={["8", "8", "0"]} marginRight={["0", "0", "8"]} bg={"white"} paddingY={["10", "16"]} > <Image src={"./Asset/secFlex1.webp"} alt="product"></Image>
           <Box padding={"6"}>  <Text width={""} color={"red.700"} fontSize={["18pt", "20pt", "40pt"]} mt={"3"} fontWeight={"semibold"}>
             Discount 50%
           </Text>
@@ -227,7 +227,7 @@ const FirstSection = () => {
 
         </Box>
         <Box bg={"white"} w={["full", "full", "30%"]} paddingX={"3"} paddingY={"4"}>
-          <Box w={["full", "full"]} paddingX={"2"} mt={"0"}><Image w={["full", "full"]} src={"./Asset/secFlex2.webp"}></Image></Box>
+          <Box w={["full", "full"]} paddingX={"2"} mt={"0"}><Image w={["full", "full"]} src={"./Asset/secFlex2.webp"} alt='oroduct'></Image></Box>
 
           <Box textAlign={"center"} marginY={"8"}  >
             <VStack><Text lineHeight={"0"}>Indoor Furniture</Text>
@@ -266,7 +266,7 @@ const FirstSection = () => {
           {goods.map((good) => (
             <Card key={good.id} bg={"white"} width={["180px", "300px"]} height={"full"} overflowY={"hidden"} paddingX={"4"} paddingY={"4"} _hover={{ boxShadow: "2xl" }}>
               <Box position={"relative"}>
-                <Image src={good.url}></Image>
+                <Image src={good.url} alt="product"></Image>
 
                 <Box width={"full"} pos={"absolute"} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} top={"0"} padding={"4"} >
                   <Box color={"white"} bg={"gold"} paddingX={"3"} fontSize={"sm"} rounded={"md"}> New</Box>
@@ -299,7 +299,7 @@ const FirstSection = () => {
           {blog.map((blog) => (
             <Card key={blog.id} bg={"white"} width={["300px", "410px"]} height={"full"} overflowY={"hidden"} paddingX={"4"} paddingY={"4"} _hover={{ boxShadow: "2xl" }}>
               <Box >
-                <Image w={"95%"} marginLeft={"2"} src={blog.url}></Image>
+                <Image w={"95%"} marginLeft={"2"} alt='blog' src={blog.url}></Image>
 
                 <HStack w={"full"} px={""} my={"4"}>
 

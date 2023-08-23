@@ -6,10 +6,10 @@ const Footer = () => {
     <Box bg={"gray.200"} py={["44", "32"]}>
       <Box w={["100%", "100%", "90%", "73%"]} mx={"auto"}>
         <Box bg={"white"} marginTop={["-72", "-48"]} p={["6", "6", "4"]} boxShadow={"lg"} display={"flex"} flexDir={["column", "column", "row"]} alignItems={"center"} justifyContent={"space-evenly"}>
-          <Image src='./Asset/logo1.webp'></Image>
-          <Image src='./Asset/logo2.webp'></Image>
-          <Image src='./Asset/logo3.webp'></Image>
-          <Image src='./Asset/logo4.webp'></Image>
+          <Image src='./Asset/logo1.webp' alt="logo"></Image>
+          <Image src='./Asset/logo2.webp' alt="logo"></Image>
+          <Image src='./Asset/logo3.webp' alt="logo"></Image>
+          <Image src='./Asset/logo4.webp' alt="logo"></Image>
         </Box>
         {/* 
      <Grid templateColumns='repeat(4, 1fr)' gap={"8"} marginTop={"12"}> */}
