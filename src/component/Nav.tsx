@@ -17,7 +17,7 @@ const Nav = () => {
         const getTotal = () => {
           let total = 0
           
-         cart.cart.forEach(item => {
+         cart.cart.forEach((item:any) => {
             total += item.quantity
             
           });
