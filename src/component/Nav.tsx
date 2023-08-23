@@ -10,8 +10,8 @@ import Payment from "./Payment"
 const Nav = () => {
     const [cartQty, setCartQty] = useState<number>(0)
     const [totalPrice, setTotalPrice] = useState(0)
-    const cart = useSelector(state => (state.Cart))
-    const user = useSelector(state => (state.login.user))
+    const cart = useSelector((state:any) => (state.Cart))
+    const user = useSelector((state:any) => (state.login.user))
     console.log(cart, "cart")
     useEffect(() => {
         const getTotal = () => {
@@ -30,7 +30,7 @@ const Nav = () => {
         const getTotal = () => {
 
             let totalPrice = 0
-            cart.cart.forEach(item => {
+            cart.cart.forEach((item:any) => {
 
                 totalPrice += item.Price * item.quantity
             });
@@ -76,7 +76,7 @@ const Nav = () => {
                     <ModalBody>
                         <Text fontWeight={"bold"} fontSize={"2xl"} >Welcome {user.email}</Text>
                         <Stack display={"flex"} flexDir={"column"} alignItems={"flex-start"} >
-                            {cart.cart.length > 0 ? cart.cart.map((item) => (<VStack key={item.id}>
+                            {cart.cart.length > 0 ? cart.cart.map((item:any) => (<VStack key={item.id}>
                                 <HStack> {item.title}
                                     <Image h="36" w="40" src={item.url} alt='cart'></Image>
 

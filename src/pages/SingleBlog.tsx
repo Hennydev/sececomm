@@ -1,22 +1,25 @@
 import { Box, Button, Flex, HStack, Image, Stack, Text, Textarea, Tooltip, VStack } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useState,FC } from 'react'
 import { MdComment } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 import { addComment } from '@/redux/commentSlice'
 import { useRouter } from 'next/router'
 
 
+type Props = {
+  item: any
+}
 
-const SingleBlog = ({ item }) => {
+const SingleBlog : FC<Props> = ({ item }) => {
   const [text, setText] = useState<boolean>(false)
   const [list, setList] = useState([])
   const [Textcomment, setTextComment] = useState<string>("")
   const dispatch = useDispatch()
   const router = useRouter()
-  const user = useSelector(state => (state.login.user))
-  const comment = useSelector(state => (state.comment.comment))
+  const user = useSelector((state:any) => (state.login.user))
+  const comment = useSelector((state:any) => (state.comment.comment))
   console.log(user)
-  const AddComment = (e) => {
+  const AddComment = (e:any) => {
     e.preventDefault()
 
     if (user.email.length > 0 ){
@@ -31,15 +34,7 @@ const SingleBlog = ({ item }) => {
     }else{
      return  router.push("Login")
     }
-
-   
-
-
-
-
-
-
-  }
+ }
   return (
     <Box display={"flex"} flexDir={["column","column","row","row"]} mx={"4"} p={"6"}>
       <Stack w={["100%", "100%", "55%"]} mx={"6"}>
@@ -62,7 +57,7 @@ const SingleBlog = ({ item }) => {
 
         <Box>
 
-          <VStack display={"flex"} flexDir={"column"} alignItems={"flex-end"} >{comment.map((item) => <Stack key={item.id}>
+          <VStack display={"flex"} flexDir={"column"} alignItems={"flex-end"} >{comment.map((item:any) => <Stack key={item.id}>
             <Box bg={"gray.100"} p={"2"} roundedBottomLeft={"lg"} pl={"2"} roundedTop={"lg"}> <Text fontSize={"sm"}>{item.Comment}</Text></Box>
             <Text fontSize={"xs"} mb={"4"} lineHeight={"0"} textAlign={"right"}>{item.user}</Text>
 

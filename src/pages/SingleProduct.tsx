@@ -1,15 +1,18 @@
 import { Box, Button, HStack, Image, Input, Text, VStack } from '@chakra-ui/react';
-import React,{useState} from 'react'
+import React,{useState, FC} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { AddItem } from '@/redux/cartSlice';
 import { useRouter } from 'next/router';
 
-
-const SingleProduct = ({item, setItemModal}) => {
+type Props = {
+  item: any,
+  setItemModal:any
+}
+const SingleProduct : FC<Props> = ({ item , setItemModal}) => {
   const router = useRouter()
 
   const dispatch = useDispatch()
-  const user = useSelector(state => (state.login.user))
+  const user = useSelector((state:any) => (state.login.user))
   console.log(user,"user")
   const [Qty, setQty] = useState(0)
   const AddToCart = ()=>{
@@ -41,7 +44,7 @@ const SingleProduct = ({item, setItemModal}) => {
     <Text>{item.title}</Text>
     <Text>${item.Price}</Text>
     <HStack>
-    <Text> Qty : </Text><Input w={"18%"} py={"0"} value={Qty} onChange={(e)=>setQty(e.target.value)}></Input>
+    <Text> Qty : </Text><Input w={"18%"} py={"0"} value={Qty} onChange={(e:any)=>setQty(e.target.value)}></Input>
     </HStack>
 
    

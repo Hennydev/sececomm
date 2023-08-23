@@ -35,7 +35,7 @@ export default function SplitScreen() {
 
   const dispatch = useDispatch()
   const [isloggedIn, setIsloggedIn] = useState<boolean>(false)
-  const handleSignin = (e) => {
+  const handleSignin = (e:any) => {
     e.preventDefault()
     dispatch(AddUser({ user: username, email: email, password: Password }))
     setIsloggedIn(true)

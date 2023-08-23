@@ -18,8 +18,8 @@ const FirstSection = () => {
   const [cBlog, setCBlog] = useState({});
   const [ItemModal, setItemModal] = useState(false)
   const [BlogModal, setBlogModal] = useState(false)
-  const [ModalSize, setModalSize] = React.useState("xl")
-  const user = useSelector(state => (state.login.user))
+  const [ModalSize, setModalSize] = useState("xl")
+  const user = useSelector((state:any) => (state.login.user))
   const [day, setDay] = useState(0)
   const [Hours, setHours] = useState(0)
   const [Seconds, setSeconds] = useState(0)
@@ -29,19 +29,19 @@ const FirstSection = () => {
   const dispatch = useDispatch()
   const AddToCart = ()=>{
     const formData={
-      id:item.id,
-      url:item.url,
+      // id:item.id,
+      // url:item.url,
       Price:Price,
-      quantity:Qty
+      // quantity:Qty
     }
     
     dispatch(AddItem({cart:formData}))
-    console.log(Qty, "Qty")
-    setQty(0)
+    // console.log(Qty, "Qty")
+    // setQty(0)
   }
 
 
-  const getTime = () => {
+  const getTime = (deadline:any) => {
     const time = Date.parse(deadline) - Date.now();
     setDay(Math.floor(time / (1000 * 60 * 60 * 24)))
     setHours(Math.floor((time / (1000 * 60 * 60)))%24)
@@ -51,13 +51,13 @@ const FirstSection = () => {
   }
 
   useEffect(() => {
-    const interval = setInterval(() => getTime(deadline), 1000);
+    const interval = setInterval(() => {getTime(deadline)}, 1000);
     return () => clearInterval(interval)
   }, [])
 
 
 
-  const onItemClicked = (item) => {
+  const onItemClicked = (item:any) => {
     setCItem(item)
     setItemModal(true)
     // setModalSize(newsize)
@@ -65,7 +65,7 @@ const FirstSection = () => {
   }
   const size = ["md", "xl"]
 
-  const onBlogClicked = (item) => {
+  const onBlogClicked = (item:any) => {
     console.log(item)
     setCBlog(item);
     setBlogModal(true)
@@ -234,19 +234,19 @@ const FirstSection = () => {
               <Text marginBottom={"3"} fontSize={""}>$200.00</Text></VStack>
             <Center>
               <VStack>
-                <Box w={"16"} h={"16"} textAlign={"center"} display={"flex"} alignItems={"center"} justifyContent={"center"} border={"1px"} borderRadius={"full"} borderColor={"red.700"}><Input focusBorderColor='none' ring={"none"} border={"none"} value={day} onChange={() => setDay(e.target.value)}></Input></Box>
+                <Box w={"16"} h={"16"} textAlign={"center"} display={"flex"} alignItems={"center"} justifyContent={"center"} border={"1px"} borderRadius={"full"} borderColor={"red.700"}><Input focusBorderColor='none' ring={"none"} border={"none"} value={day} onChange={(e:any) => setDay(e.target.value)}></Input></Box>
                 <Text>Days</Text>
 
               </VStack>
 
 
               <VStack>
-                <Box w={"16"} mx={"4"} h={"16"} textAlign={"center"} display={"flex"} alignItems={"center"} justifyContent={"center"} border={"1px"} borderRadius={"full"} borderColor={"red.700"}><Input focusBorderColor='none' ring={"none"} border={"none"} value={Hours} onChange={() => setHours(e.target.value)}></Input></Box>
+                <Box w={"16"} mx={"4"} h={"16"} textAlign={"center"} display={"flex"} alignItems={"center"} justifyContent={"center"} border={"1px"} borderRadius={"full"} borderColor={"red.700"}><Input focusBorderColor='none' ring={"none"} border={"none"} value={Hours} onChange={(e:any) => setHours(e.target.value)}></Input></Box>
                 <Text>Hours</Text>
 
               </VStack>
               <VStack>
-                <Box w={"16"} h={"16"} textAlign={"center"} display={"flex"} alignItems={"center"} justifyContent={"center"} border={"1px"} borderRadius={"full"} borderColor={"red.700"}><Input focusBorderColor='none' ring={"none"} border={"none"} value={Seconds} onChange={() => setSeconds(e.target.value)}></Input></Box>
+                <Box w={"16"} h={"16"} textAlign={"center"} display={"flex"} alignItems={"center"} justifyContent={"center"} border={"1px"} borderRadius={"full"} borderColor={"red.700"}><Input focusBorderColor='none' ring={"none"} border={"none"} value={Seconds} onChange={(e:any) => setSeconds(e.target.value)}></Input></Box>
                 <Text>Seconds</Text>
 
               </VStack>
