@@ -38,7 +38,7 @@ const SingleBlog : FC<Props> = ({ item }) => {
   return (
     <Box display={"flex"} flexDir={["column","column","row","row"]} mx={"4"} p={"6"}>
       <Stack w={["100%", "100%", "55%"]} mx={"6"}>
-        <Image src={item.url} alt="blog"></Image>
+        <Image src={item.img} alt="blog"></Image>
         <Text> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates eaque asperiores quos sed doloribus hic accusantium eveniet tenetur aspernatur similique? Blanditiis voluptatibus laborum et dolorem vel, culpa sequi impedit nulla!</Text>
         <HStack my={"2"} >
           <Tooltip label='Click to add comment' fontSize='md'>

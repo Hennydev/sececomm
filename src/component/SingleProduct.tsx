@@ -20,13 +20,12 @@ const SingleProduct : FC<Props> = ({ item , setItemModal}) => {
      if (user.email ){
       const formData={
         id:item.id,
-        url:item.url,
+        img:item.img,
         Price:item.Price,
         quantity:Qty,
         user:user.email
       }
       dispatch(AddItem({cart:formData}))
-      console.log(Qty, "Qty")
       setQty(0)
       setItemModal(false)
 
@@ -39,15 +38,12 @@ const SingleProduct : FC<Props> = ({ item , setItemModal}) => {
 //     
   return (
     <Box m={"auto"} py={"8"}>
-    
-    <Image src={item.url} alt="productImg"/>
+    <Image src={item.img} alt="productImg"/>
     <Text>{item.title}</Text>
     <Text>${item.Price}</Text>
     <HStack>
     <Text> Qty : </Text><Input w={"18%"} py={"0"} value={Qty} onChange={(e:any)=>setQty(e.target.value)}></Input>
     </HStack>
-
-   
     <Button onClick={AddToCart} my={"4"} bg={"blue.300"} textColor={"white"}>Add to cart</Button>
     </Box>
   )

@@ -4,8 +4,8 @@ import { redirect } from 'next/dist/server/api-utils'
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { FiShoppingCart, FiZoomIn, FiZoomOut } from "react-icons/fi"
-import SingleProduct from '../pages/SingleProduct'
-import SingleBlog from '@/pages/SingleBlog'
+import SingleProduct from './SingleProduct'
+import SingleBlog from '@/component/SingleBlog'
 import { MdClose } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 import { AddItem } from '@/redux/cartSlice'
@@ -30,7 +30,7 @@ const FirstSection = () => {
   const AddToCart = ()=>{
     const formData={
       // id:item.id,
-      // url:item.url,
+      // img:item.img,
       Price:Price,
       // quantity:Qty
     }
@@ -74,65 +74,65 @@ const FirstSection = () => {
 
   const [blog, setBlog] = useState([{
     id: 1,
-    url: "./Asset/blog1.webp",
+    img: "./Asset/blog1.webp",
     title: "DUMMY Blog"
   },
   {
     id: 2,
-    url: "./Asset/blog2.webp",
+    img: "./Asset/blog2.webp",
     title: "DUMMY Blog"
   },
   {
     id: 3,
-    url: "./Asset/blog3.webp",
+    img: "./Asset/blog3.webp",
     title: "DUMMY Blog"
   }])
 
   const [goods, setGoods] = useState([{
     id: 1,
-    url: "./Asset/flex1.webp",
+    img: "./Asset/flex1.webp",
     title: "DUMMY PRODUCT",
     Price: 50
   },
   {
     id: 2,
-    url: "./Asset/flexImg2.webp",
+    img: "./Asset/flexImg2.webp",
     title: "DUMMY PRODUCT",
     Price: 890
   },
   {
     id: 3,
-    url: "./Asset/fleximg3.webp",
+    img: "./Asset/fleximg3.webp",
     title: "DUMMY PRODUCT",
     Price: 580
   },
   {
     id: 4,
-    url: "./Asset/flexImg4.webp",
+    img: "./Asset/flexImg4.webp",
     title: "DUMMY PRODUCT",
     Price: 500
   },
   {
     id: 5,
-    url: "./Asset/flexImg2.webp",
+    img: "./Asset/flexImg2.webp",
     title: "DUMMY PRODUCT",
     Price: 500
   },
   {
     id: 6,
-    url: "./Asset/flex1.webp",
+    img: "./Asset/flex1.webp",
     title: "DUMMY PRODUCT",
     Price: 500
   },
   {
     id: 7,
-    url: "./Asset/fleximg3.webp",
+    img: "./Asset/fleximg3.webp",
     title: "DUMMY PRODUCT",
     Price: 500
   },
   {
     id: 8,
-    url: "./Asset/flexImg4.webp",
+    img: "./Asset/flexImg4.webp",
     title: "DUMMY PRODUCT",
     Price: 500
   },
@@ -178,7 +178,7 @@ const FirstSection = () => {
           {goods.map((good) => (
             <Card key={good.id} bg={"white"} marginX={"3"} width={["180px", "285px"]} height={"full"} overflowY={"hidden"} paddingX={"4"} paddingY={"4"} _hover={{ boxShadow: "2xl" }}>
               <Box position={"relative"}>
-                <Image src={good.url} alt="product"></Image>
+                <Image src={good.img} alt="product"></Image>
 
                 <Box width={"full"} pos={"absolute"} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} top={"0"} padding={"4"} >
                   <Box color={"white"} bg={"gold"} paddingX={"3"} fontSize={"sm"} rounded={"md"}> New</Box>
@@ -266,7 +266,7 @@ const FirstSection = () => {
           {goods.map((good) => (
             <Card key={good.id} bg={"white"} width={["180px", "300px"]} height={"full"} overflowY={"hidden"} paddingX={"4"} paddingY={"4"} _hover={{ boxShadow: "2xl" }}>
               <Box position={"relative"}>
-                <Image src={good.url} alt="product"></Image>
+                <Image src={good.img} alt="product"></Image>
 
                 <Box width={"full"} pos={"absolute"} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} top={"0"} padding={"4"} >
                   <Box color={"white"} bg={"gold"} paddingX={"3"} fontSize={"sm"} rounded={"md"}> New</Box>
@@ -299,7 +299,7 @@ const FirstSection = () => {
           {blog.map((blog) => (
             <Card key={blog.id} bg={"white"} width={["300px", "410px"]} height={"full"} overflowY={"hidden"} paddingX={"4"} paddingY={"4"} _hover={{ boxShadow: "2xl" }}>
               <Box >
-                <Image w={"95%"} marginLeft={"2"} alt='blog' src={blog.url}></Image>
+                <Image w={"95%"} marginLeft={"2"} alt='blog' src={blog.img}></Image>
 
                 <HStack w={"full"} px={""} my={"4"}>
 
