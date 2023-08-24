@@ -65,7 +65,7 @@ const Nav = () => {
             {
                 menu && <VStack onMouseLeave={() => setmenu(false)} bg={"#F5F5F5"} my={"6"} mx={""} py={"4"}>
                     <Link textDecor={"none"} href={"Profile"}><Text>Profile</Text></Link>
-                    <Text>Logout</Text>
+                    <Link textDecor={"none"} href={"Login"}><Text>Logout</Text></Link>
                 </VStack>
             }
             <Modal onClose={onClose} isOpen={isOpen} isCentered>

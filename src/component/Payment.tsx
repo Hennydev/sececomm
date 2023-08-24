@@ -1,17 +1,18 @@
 
-import { useState } from "react";
+import { useState, FC } from "react";
 import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
 
+type Props = {
+  totalPrice: any
+}
 
-export default function Payment({totalPrice}) {
+const Payment : FC<Props>=({ totalPrice}) => {
   const [amount, setAmount] = useState(totalPrice);
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  
 
   const config = {
     public_key: "FLWPUBK_TEST-c136bac20a029395da907bc29f86cc50-X",
-    tx_ref: Date.now(),
+    tx_ref: Date.now().toLocaleString(),
     amount: amount,
     currency: "NGN",
     payment_options: "card,mobilemoney,ussd",
@@ -30,20 +31,23 @@ export default function Payment({totalPrice}) {
   const fwConfig = {
     ...config,
     text: 'Pay with Flutterwave!',
-    callback: (response) => {
+    callback: (response:any) => {
        console.log(response);
       closePaymentModal() // this will close the modal programmatically
     },
     onClose: () => {},
   };
 
-  return (
-    <div className="App">
+  return (  
+    <div className ="App">
       <div className="container">
        
-
       <FlutterWaveButton {...fwConfig} />
       </div>
     </div>
   );
 }
+
+
+
+export default Payment
