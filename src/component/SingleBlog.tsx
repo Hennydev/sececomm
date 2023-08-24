@@ -18,23 +18,25 @@ const SingleBlog : FC<Props> = ({ item }) => {
   const router = useRouter()
   const user = useSelector((state:any) => (state.login.user))
   const comment = useSelector((state:any) => (state.comment.comment))
-  console.log(user)
+  console.log(user, "user")
   const AddComment = (e:any) => {
-    e.preventDefault()
-
-    if (user.email.length > 0 ){
-      const formData = {
-
-        user: user.email,
-        comment: Textcomment,
-      }
-      dispatch(addComment({ comment: formData }))
-      setTextComment("")
-      setText(false)
-    }else{
-     return  router.push("Login")
-    }
- }
+   e.preventDefault()
+      if (user.email ){
+        const formData = {
+  
+          user: user.email,
+          comment: Textcomment,
+        }
+        dispatch(addComment({ comment: formData }))
+        setTextComment("")
+        setText(false)
+  
+       }else {
+        return router.push("Login")
+       }
+    } 
+    
+  
   return (
     <Box display={"flex"} flexDir={["column","column","row","row"]} mx={"4"} p={"6"}>
       <Stack w={["100%", "100%", "55%"]} mx={"6"}>
@@ -66,6 +68,6 @@ const SingleBlog : FC<Props> = ({ item }) => {
       </VStack>
     </Box>
   )
-}
+  }
 
 export default SingleBlog
