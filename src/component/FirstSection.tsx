@@ -214,15 +214,15 @@ const FirstSection = () => {
       </Box>
       <Box bg={""} display={"flex"} flexDirection={["column", "column", "row"]} alignItems={"center"} justifyContent={"center"}>
 
-        <Box display={"flex"} w={["full", "full", "65%"]} mb={["8", "8", "0"]} marginRight={["0", "0", "8"]} bg={"white"} paddingY={["10", "16"]} > <Image src={"./Asset/secFlex1.webp"} alt="product"></Image>
-          <Box padding={"6"}>  <Text width={""} color={"red.700"} fontSize={["18pt", "20pt", "40pt"]} mt={"3"} fontWeight={"semibold"}>
+        <Box display={"flex"} flexDirection={["column", "column", "row"]}  w={["full", "full", "65%"]} mb={["8", "8", "0"]} marginRight={["0", "0", "8"]} bg={"white"} paddingY={["10", "16"]} > <Image src={"./Asset/secFlex1.webp"} alt="product"></Image>
+          <Box padding={"6"}>  <Text width={""} textAlign={["center", "center", "start","start"]} color={"red.700"} fontSize={["18pt", "20pt", "40pt"]} mt={"3"} fontWeight={"semibold"}>
             Discount 50%
           </Text>
-            <Text fontSize={["xs", "xs", "sm"]} fontWeight={""} color={""}>
+            <Text  textAlign={["center", "center", "start","start"]} fontSize={["xs", "xs", "sm"]} fontWeight={""} color={""}>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia impedit,
               dicta, reiciendis, labore at sint ab aliquid libero doloribus dolore earum omnis tenetur
               necessitatibus aperiam?</Text>
-            <Link href={"#"} color={"red.700"} fontWeight={"semibold"}>GET DISCOUNT </Link>
+            <Link href={"#"}  textAlign={["center", "center", "start","start"]} color={"red.700"} fontWeight={"semibold"}>GET DISCOUNT </Link>
           </Box>
 
         </Box>
@@ -256,13 +256,13 @@ const FirstSection = () => {
         </Box>
 
       </Box>
-      <Box id='Shop' marginY={"8"} display={"flex"} flexDirection={"column"} alignItems={"center"} justifyContent={"center"}>
+      <Box id='Shop' marginY={"8"} display={"flex"}  flexDirection={"column"} alignItems={"center"} justifyContent={"center"}>
         <Center display={"flex"} flexDirection={"column"} >
           <Text fontSize={["xl", "2xl", "4xl"]} fontWeight={"bold"}><Link href='#Shop'>Purchase Online on Henny</Link> </Text>
           <Box height={"1"} marginTop={"4"} width={"16"} bg={"red.700"} />
 
         </Center>
-        <Grid templateColumns='repeat(4, 1fr)' gap={"6"} marginY={"16"} w='full' overflowX={"hidden"}>
+        <Grid templateColumns='repeat(4, 1fr)' gap={"6"} marginY={"16"} w='full' overflowX={["scroll","scroll", "hidden"]}>
           {goods.map((good) => (
             <Card key={good.id} bg={"white"} width={["180px", "300px"]} height={"full"} overflowY={"hidden"} paddingX={"4"} paddingY={"4"} _hover={{ boxShadow: "2xl" }}>
               <Box position={"relative"}>
@@ -295,7 +295,7 @@ const FirstSection = () => {
           <Box height={"1"} marginTop={"4"} width={"16"} bg={"red.700"} />
 
         </Center>
-        <Grid templateColumns='repeat(3, 1fr)' gap={"4"} marginY={"16"} w='full' overflowX={["scroll", "hidden"]}>
+        <Grid templateColumns='repeat(3, 1fr)' gap={"4"} marginY={"16"} w='full' overflowX={["scroll","scroll", "hidden"]}>
           {blog.map((blog) => (
             <Card key={blog.id} bg={"white"} width={["300px", "410px"]} height={"full"} overflowY={"hidden"} paddingX={"4"} paddingY={"4"} _hover={{ boxShadow: "2xl" }}>
               <Box >

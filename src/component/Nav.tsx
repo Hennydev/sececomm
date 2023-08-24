@@ -58,7 +58,7 @@ const Nav = () => {
 
             <HStack w={"85%"} mx={"auto"} display={"flex"} flexDirection={"row"} justifyContent={'space-between'} >
                 <Heading fontSize={"3xl"} cursor={"pointer"}><RxHamburgerMenu onClick={() => setmenu(true)} /></Heading>
-                <Heading fontSize={"3xl"} color={"#808080"}>Henny</Heading>
+                <Heading fontSize={"3xl"} color={"#808080"}><Link href={"#"}>Henny</Link> </Heading>
                 <Heading fontSize={"3xl"}>  <HiShoppingCart onClick={onOpen} ></HiShoppingCart></Heading>
 
             </HStack>
